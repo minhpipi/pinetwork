@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Pi Thịnh Vượng</title>
+    <title>Pi Galaxy Profile</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Poppins:wght@300;400&display=swap"
       rel="stylesheet"
@@ -51,7 +51,7 @@
 
       .header {
         text-align: center;
-        margin: 40px 0;
+        margin: 20px 0;
         position: relative;
         width: 100%;
       }
@@ -63,8 +63,8 @@
       }
 
       #avatar {
-        width: 220px;
-        height: 220px;
+        width: 180px;
+        height: 180px;
         border-radius: 50%;
         border: 4px solid;
         border-image: linear-gradient(45deg, #00ddeb, #6b00ff) 1;
@@ -72,6 +72,9 @@
         animation: zoomIn 1s ease-out;
         display: block;
         margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        object-fit: cover;
       }
 
       .avatar-wrapper::before {
@@ -97,7 +100,7 @@
         background: linear-gradient(
           45deg,
           transparent,
-          rgba(0, 221, 235, 0.3),
+          rgba(0, 221, 235, 0.1),
           transparent
         );
         animation: shimmer 5s infinite;
@@ -116,7 +119,7 @@
         border-image: linear-gradient(45deg, #00ddeb, #6b00ff) 1;
         border-radius: 8px;
         animation: scaleIn 1.2s ease-out;
-        margin: 20px 0 10px;
+        margin: 10px 0 5px;
         display: inline-block;
       }
 
@@ -130,7 +133,7 @@
         font-size: 16px;
         color: #ffd700;
         font-family: "Poppins", sans-serif;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         animation: fadeSlide 1.5s ease-out;
       }
 
@@ -142,7 +145,7 @@
         font-family: "Poppins", sans-serif;
         position: relative;
         overflow: hidden;
-        margin-top: 10px;
+        margin-top: 5px;
       }
 
       .welcome::after {
@@ -156,31 +159,6 @@
         animation: scanLine 2s infinite;
       }
 
-      .cta-button {
-        display: inline-block;
-        margin-top: 20px;
-      }
-
-      .cta-button button {
-        background: linear-gradient(45deg, #00ddeb, #6b00ff);
-        color: #e6f0fa;
-        border: 2px solid #ffd700;
-        padding: 12px 30px;
-        border-radius: 8px;
-        font-size: 16px;
-        font-family: "Exo 2", sans-serif;
-        cursor: pointer;
-        transition: all 0.3s;
-        box-shadow: 0 0 10px #00ddeb;
-        animation: fadeSlide 1.8s ease-out;
-      }
-
-      .cta-button button:hover {
-        background: linear-gradient(45deg, #6b00ff, #00ddeb);
-        box-shadow: 0 0 20px #00ddeb;
-        transform: scale(1.05);
-      }
-
       .body {
         text-align: center;
         width: 100%;
@@ -192,8 +170,8 @@
         background: rgba(0, 221, 235, 0.05);
         border: 1px solid #6b00ff;
         border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 40px;
+        padding: 15px;
+        margin-bottom: 30px;
         width: 100%;
         animation: zoomIn 1s ease-out 0.2s backwards;
       }
@@ -214,36 +192,54 @@
       }
 
       #wallet {
-        color: #ffd700;
+        color: #ffea00;
         font-size: 18px;
         cursor: pointer;
         padding: 5px 10px;
         border-radius: 5px;
         transition: all 0.3s;
+        border: 1px solid;
+        border-image: linear-gradient(45deg, #00ddeb, #6b00ff) 1;
+        animation: pulseWallet 2s infinite;
       }
 
       #wallet:hover {
         background: rgba(255, 215, 0, 0.1);
-        box-shadow: 0 0 10px #ffd700;
+        box-shadow: 0 0 10px #ffea00;
       }
 
-      .wallet-icon {
-        width: 20px;
-        height: 20px;
+      @keyframes pulseWallet {
+        0% {
+          box-shadow: 0 0 5px #ffea00;
+        }
+        50% {
+          box-shadow: 0 0 15px #ffea00;
+        }
+        100% {
+          box-shadow: 0 0 5px #ffea00;
+        }
+      }
+
+      .wallet-icon,
+      .icon,
+      .guide-icon {
+        width: 16px;
+        height: 16px;
         filter: drop-shadow(0 0 3px #ffd700);
       }
 
       .buttons {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        margin: 40px 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0;
       }
 
       .buttons a {
         position: relative;
-        width: 220px;
+        width: 160px;
         animation: fadeSlide 1s ease-out 0.4s backwards;
       }
 
@@ -251,10 +247,10 @@
         background: linear-gradient(45deg, #00ddeb, #6b00ff);
         color: #e6f0fa;
         border: 2px solid #ffd700;
-        padding: 12px;
+        padding: 8px;
         width: 100%;
         border-radius: 8px;
-        font-size: 15px;
+        font-size: 13px;
         font-family: "Exo 2", sans-serif;
         cursor: pointer;
         transition: all 0.3s;
@@ -312,13 +308,6 @@
         box-shadow: 0 0 15px #00ddeb;
       }
 
-      .icon {
-        width: 22px;
-        height: 22px;
-        filter: drop-shadow(0 0 3px #00ddeb);
-        animation: pulseIcon 2s infinite;
-      }
-
       .guides {
         margin: 40px 0;
         width: 100%;
@@ -330,7 +319,7 @@
         border: 1px solid;
         border-image: linear-gradient(45deg, #00ddeb, #6b00ff) 1;
         border-radius: 12px;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         transition: all 0.3s;
         animation: fadeSlide 1s ease-out 0.6s backwards;
       }
@@ -344,7 +333,7 @@
         font-size: 20px;
         color: #00ddeb;
         text-shadow: 0 0 5px #6b00ff;
-        padding: 15px;
+        padding: 10px;
         cursor: pointer;
         animation: flicker 2s infinite;
         display: flex;
@@ -352,22 +341,16 @@
         gap: 10px;
       }
 
-      .guide-icon {
-        width: 20px;
-        height: 20px;
-        filter: drop-shadow(0 0 3px #00ddeb);
-      }
-
       .guide-content {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.5s ease-out;
-        padding: 0 15px;
+        padding: 0 10px;
       }
 
       .guide-content.active {
-        max-height: 200px;
-        padding: 15px;
+        max-height: 150px;
+        padding: 10px;
       }
 
       .guide-content p {
@@ -406,45 +389,29 @@
         width: 100%;
         background: rgba(10, 10, 10, 0.9);
         text-align: center;
-        padding: 15px;
+        padding: 5px;
         z-index: 3;
         box-shadow: 0 -5px 15px rgba(0, 221, 235, 0.2);
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .footer-content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-      }
-
-      .logo {
-        width: 60px;
-        position: relative;
-        filter: drop-shadow(0 0 10px #00ddeb);
-        animation: pulse 2s infinite;
-      }
-
-      .logo::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          45deg,
-          transparent,
-          rgba(0, 221, 235, 0.3),
-          transparent
-        );
-        animation: shimmer 5s infinite;
+        gap: 0;
       }
 
       #slogan {
         font-size: 18px;
         color: #ffd700;
         font-style: italic;
+        background: linear-gradient(45deg, #00ddeb, #ffd700, #6b00ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         text-shadow: 0 0 5px #6b00ff;
         font-family: "Poppins", sans-serif;
         position: relative;
@@ -460,25 +427,6 @@
         height: 100%;
         background: linear-gradient(90deg, transparent, #00ddeb, transparent);
         animation: scanLine 2s infinite;
-      }
-
-      .footer-links {
-        display: flex;
-        gap: 15px;
-        margin-top: 10px;
-      }
-
-      .footer-links a {
-        color: #00ddeb;
-        font-size: 14px;
-        font-family: "Poppins", sans-serif;
-        text-decoration: none;
-        transition: all 0.3s;
-      }
-
-      .footer-links a:hover {
-        color: #ffd700;
-        text-shadow: 0 0 5px #ffd700;
       }
 
       @keyframes zoomIn {
@@ -600,8 +548,8 @@
           padding: 40px 30px 120px;
         }
         #avatar {
-          width: 240px;
-          height: 240px;
+          width: 200px;
+          height: 200px;
         }
         h1 {
           font-size: 40px;
@@ -612,24 +560,16 @@
         .welcome {
           font-size: 16px;
         }
-        .cta-button button {
-          font-size: 18px;
-          padding: 14px 40px;
-        }
         #username,
         #wallet {
           font-size: 18px;
         }
-        .buttons {
-          flex-direction: row;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
         .buttons a {
-          width: 220px;
+          width: 180px;
         }
         .buttons button {
-          font-size: 16px;
+          font-size: 14px;
+          padding: 10px;
         }
         .guide h3 {
           font-size: 22px;
@@ -637,26 +577,18 @@
         .guide-content p {
           font-size: 15px;
         }
-        .footer-content {
-          flex-direction: row;
-          justify-content: center;
-          gap: 20px;
-        }
-        .footer-links {
-          margin-top: 0;
-        }
       }
 
       @media (max-width: 400px) {
         .header {
-          margin: 20px 0;
+          margin: 10px 0;
         }
         .welcome {
           font-size: 12px;
         }
         #avatar {
-          width: 180px;
-          height: 180px;
+          width: 140px;
+          height: 140px;
         }
         h1 {
           font-size: 30px;
@@ -664,9 +596,22 @@
         .description {
           font-size: 14px;
         }
-        .cta-button button {
+        #wallet {
+          font-size: 16px;
+        }
+        .buttons a {
+          width: 140px;
+        }
+        .buttons button {
+          font-size: 12px;
+          padding: 6px;
+        }
+        .footer {
+          padding: 5px;
+          height: 25px;
+        }
+        #slogan {
           font-size: 14px;
-          padding: 10px 25px;
         }
       }
     </style>
@@ -676,45 +621,41 @@
     <div class="container">
       <div class="header">
         <div class="avatar-wrapper">
-          <img id="avatar" src="img/pifounders.jpg" alt="Avatar" />
+          <img
+            id="avatar"
+            src="https://i.imgur.com/placeholder1.jpg"
+            alt="Avatar"
+            onerror="this.src='https://i.imgur.com/placeholder.jpg'"
+          />
         </div>
         <h1 id="name"></h1>
-        <div class="description">Pioneer since 2023</div>
-        <div class="welcome">CÙNG PI CHÚNG TA THAY ĐỔI THẾ GIỚI</div>
-        <div class="cta-button">
-          <a id="zalo-personal-cta" href="#" target="_blank">
-            <button>Liên Hệ Ngay</button>
-          </a>
-        </div>
+        <div class="description">PI NETWORK</div>
+        <div class="welcome">CÙNG PI CHÚNG TA THAY ĐỔI THẾ GIỚI!</div>
       </div>
       <div class="body">
         <div class="info-card">
           <p id="username">Username: Loading...</p>
           <p id="wallet" onclick="copyWallet()">
-            <img
-              class="wallet-icon"
-              src="img/vi.png"
-              alt="Wallet"
-            />
+            <img class="wallet-icon" src="IMG/vi.png" alt="Wallet" />
             Wallet: Loading...
           </p>
         </div>
         <div class="buttons">
           <a id="zalo-personal" href="#" target="_blank">
             <button>
-              <img class="icon" src="img/zlo.jpg" alt="Zalo" />
+              <img class="icon" src="IMG/zlo.jpg" alt="Zalo" />
               Zalo Cá Nhân
             </button>
           </a>
           <a id="zalo-group" href="#" target="_blank">
             <button>
-              <img class="icon" src="img/zlo.jpg" alt="Zalo" />
+              <img class="icon" src="IMG/zlo.jpg" alt="Zalo" />
               Zalo Nhóm Hỗ Trợ
             </button>
           </a>
           <a id="telegram" href="#" target="_blank">
             <button>
-              <img class="icon" src="img/tele.png" alt="Telegram" />
+              <img class="icon" src="IMG/tele.png" alt="Telegram" />
               Telegram Tin Tức
             </button>
           </a>
@@ -722,25 +663,25 @@
         <div class="guides">
           <div class="guide">
             <h3 onclick="toggleGuide(this)">
-              <img class="guide-icon" src="img/download.png" alt="KYC" />
+              <img class="guide-icon" src="img/pib.png" alt="KYC" />
               Hướng Dẫn KYC
             </h3>
             <div class="guide-content">
               <p>
-                1. Vào Pi Browser, đăng nhập tài khoản. 2. Vào phần KYC, chụp
-                CMND/hộ chiếu. 3. Xác minh qua video call (nếu cần). Hoàn tất
-                trong 5 phút!
+                1. Tải app Pi Network, đăng nhập tài khoản. 2. Vào phần KYC,
+                chụp CMND/hộ chiếu. 3. Xác minh qua video call (nếu cần). Hoàn
+                tất trong 5 phút!
               </p>
               <button
                 onclick="window.open('https://minepi.com/kyc-guide', '_blank')"
               >
-                Xem Chi Tiết
+                Tìm Hiểu Thêm
               </button>
             </div>
           </div>
           <div class="guide">
             <h3 onclick="toggleGuide(this)">
-              <img class="guide-icon" src="img/download.png" alt="Transfer" />
+              <img class="guide-icon" src="img/pib.png" alt="Transfer" />
               Hướng Dẫn Chuyển Pi
             </h3>
             <div class="guide-content">
@@ -752,13 +693,13 @@
               <button
                 onclick="window.open('https://minepi.com/transfer-guide', '_blank')"
               >
-                Xem Chi Tiết
+                Tìm Hiểu Thêm
               </button>
             </div>
           </div>
           <div class="guide">
             <h3 onclick="toggleGuide(this)">
-              <img class="guide-icon" src="img/download.png" alt="Trading" />
+              <img class="guide-icon" src="img/pib.png" alt="Trading" />
               Hướng Dẫn Giao Dịch Pi Trên Sàn
             </h3>
             <div class="guide-content">
@@ -770,7 +711,7 @@
               <button
                 onclick="window.open('https://minepi.com/trading-guide', '_blank')"
               >
-                Xem Chi Tiết
+                Tìm Hiểu Thêm
               </button>
             </div>
           </div>
@@ -778,12 +719,7 @@
       </div>
       <div class="footer">
         <div class="footer-content">
-          <img class="logo" src="img/pi.png" alt="Pi Logo" />
-          <p id="slogan">PI NETWORK ĐỊNH HÌNH TƯƠNG LAI TÀI CHÍNH THẾ GIỚI</p>
-          <div class="footer-links">
-            <a href="https://minepi.com" target="_blank">Pi Network</a>
-            <a href="https://t.me/pinews" target="_blank">Telegram</a>
-          </div>
+          <p id="slogan">PI NETWORK-ĐỊNH HÌNH TƯƠNG LAI TÀI CHÍNH THẾ GIỚI</p>
         </div>
       </div>
     </div>
@@ -823,40 +759,1014 @@
         particlesJS("particles-js", particlesConfig);
       });
 
-      const nameElement = document.getElementById("name");
-      const nameText = "Hoàng Văn Minh";
-      nameElement.innerHTML = nameText
-        .split("")
-        .map(
-          (char, i) =>
-            `<span style="animation-delay: ${i * 0.1}s">${char}</span>`
-        )
-        .join("");
-
-      const urlParams = new URLSearchParams(window.location.search);
-      const memberId = urlParams.get("id") || "member001";
+      let memberId = "member001";
+      if (window.URLSearchParams) {
+        const urlParams = new URLSearchParams(window.location.search);
+        memberId = urlParams.get("id") || "member001";
+      }
 
       const members = {
         member001: {
-          name: "Hoàng Văn Minh ",
+          name: "HOÀNG VĂN MINH ",
           username: "minhtrieuphu",
           wallet: "GCZFAMVL3JZVWIBYB4YAKZKVPCIJG5ZAFKNLNYRJPYGS4TUI6AI3O5Y3",
-          zaloPersonal: "https://zalo.me/123456789",
-          zaloGroup: "https://zalo.me/g/supportgroup",
+          zaloPersonal: "http://zaloapp.com/qr/p/2892rfcnef72",
+          zaloGroup: "https://zalo.me/g/qardra541",
           telegram: "https://t.me/pinews",
           avatar:
-            "https://cdn-ilcbnhb.nitrocdn.com/eyWebYtfntWmnihDSZRZvIqipddxdlOp/assets/images/optimized/rev-e5149a8/minepi.com/wp-content/uploads/2022/06/Dr.-Nicolas-Kokkalis.jpeg",
-          joined: "314$",
+            "https://scontent.fthd2-4.fna.fbcdn.net/v/t39.30808-6/491917961_1727005108174242_2078688021012827982_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF110oOHlXOlTFF9oYk0r3yYQ1m-g7itQVhDWb6DuK1BZ3sucE9z-7uwDUarxY0D3CfbfU9tcST3gZTIhhGu6An&_nc_ohc=4SzFps2yJzUQ7kNvwHH7L47&_nc_oc=AdnFd13mwkhALu02-d31fjHeggs7GYLePw-357-wxaxuuFusiy0Z1-DvHy_nhDeKH9uwiYy6Ftwv1ZusfH_qv1Lz&_nc_zt=23&_nc_ht=scontent.fthd2-4.fna&_nc_gid=gR9-A-TCZ66hGBtwmdhmpw&oh=00_AfGitvYpWBTzLXxir94qw19Hq694QT-RchoxrUAmDi6pSw&oe=6806AF62",
+          joined: "",
         },
         member002: {
-          name: "Trần Thị B",
-          username: "Pioneer_B",
-          wallet: "pi1def456xyz002",
-          zaloPersonal: "https://zalo.me/987654321",
+          name: "PHẠM THỊ XUÂN",
+          username: "phamthixuan79",
+          wallet: "GBDUXC2JUGEVI7N2NGLXB6B3VMUUVNUK6QI4TL5XIB2LIY3U7CDGK3B4",
+          zaloPersonal: "http://zaloapp.com/qr/p/fwubdzur20yc",
+          zaloGroup: "https://zalo.me/g/qardra541",
+          telegram: "https://t.me/pinews",
+          avatar:
+            "https://scontent.fthd2-4.fna.fbcdn.net/v/t39.30808-6/333513902_1932195023807300_1163851942859129592_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEHUbUzai7uybMKKCX41vePUHHOaW9qRuVQcc5pb2pG5TMcLbXM7749XtjmZxexAOiueFtBjmWgkEO3QyI37KQg&_nc_ohc=lH3McysU4aoQ7kNvwGfvN8R&_nc_oc=AdkwIF8CjfKrcRQehY1YEX-4uW7SwDKKLckM0d3txT13U20SquRj7-igGkubpy4JZM_iTGyaMxWWZYkAfutJjSKR&_nc_zt=23&_nc_ht=scontent.fthd2-4.fna&_nc_gid=0Bv9_VOHDcF5cOY7VLv1qg&oh=00_AfGeOdOz5MbXtTZn7NlgWF26iuFU8gosH4Kw4ZcjKnWJCg&oe=6807E759 ",
+          joined: "",
+        },
+        member003: {
+          name: "Tên Thành Viên 3",
+          username: "Pioneer_3",
+          wallet: "pi1xyz0003",
+          zaloPersonal: "https://zalo.me/placeholder3",
           zaloGroup: "https://zalo.me/g/supportgroup",
           telegram: "https://t.me/pinews",
-          avatar: "https://i.imgur.com/placeholder2.jpg",
+          avatar: "https://i.imgur.com/placeholder3.jpg",
           joined: "2023",
+        },
+        member004: {
+          name: "Tên Thành Viên 4",
+          username: "Pioneer_4",
+          wallet: "pi1xyz0004",
+          zaloPersonal: "https://zalo.me/placeholder4",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder4.jpg",
+          joined: "2024",
+        },
+        member005: {
+          name: "Tên Thành Viên 5",
+          username: "Pioneer_5",
+          wallet: "pi1xyz0005",
+          zaloPersonal: "https://zalo.me/placeholder5",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder5.jpg",
+          joined: "2023",
+        },
+        member006: {
+          name: "Tên Thành Viên 6",
+          username: "Pioneer_6",
+          wallet: "pi1xyz0006",
+          zaloPersonal: "https://zalo.me/placeholder6",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder6.jpg",
+          joined: "2024",
+        },
+        member007: {
+          name: "Tên Thành Viên 7",
+          username: "Pioneer_7",
+          wallet: "pi1xyz0007",
+          zaloPersonal: "https://zalo.me/placeholder7",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder7.jpg",
+          joined: "2023",
+        },
+        member008: {
+          name: "Tên Thành Viên 8",
+          username: "Pioneer_8",
+          wallet: "pi1xyz0008",
+          zaloPersonal: "https://zalo.me/placeholder8",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder8.jpg",
+          joined: "2024",
+        },
+        member009: {
+          name: "Tên Thành Viên 9",
+          username: "Pioneer_9",
+          wallet: "pi1xyz0009",
+          zaloPersonal: "https://zalo.me/placeholder9",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder9.jpg",
+          joined: "2023",
+        },
+        member010: {
+          name: "Tên Thành Viên 10",
+          username: "Pioneer_10",
+          wallet: "pi1xyz0010",
+          zaloPersonal: "https://zalo.me/placeholder10",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder10.jpg",
+          joined: "2024",
+        },
+        member011: {
+          name: "Tên Thành Viên 11",
+          username: "Pioneer_11",
+          wallet: "pi1xyz0011",
+          zaloPersonal: "https://zalo.me/placeholder11",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder11.jpg",
+          joined: "2023",
+        },
+        member012: {
+          name: "Tên Thành Viên 12",
+          username: "Pioneer_12",
+          wallet: "pi1xyz0012",
+          zaloPersonal: "https://zalo.me/placeholder12",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder12.jpg",
+          joined: "2024",
+        },
+        member013: {
+          name: "Tên Thành Viên 13",
+          username: "Pioneer_13",
+          wallet: "pi1xyz0013",
+          zaloPersonal: "https://zalo.me/placeholder13",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder13.jpg",
+          joined: "2023",
+        },
+        member014: {
+          name: "Tên Thành Viên 14",
+          username: "Pioneer_14",
+          wallet: "pi1xyz0014",
+          zaloPersonal: "https://zalo.me/placeholder14",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder14.jpg",
+          joined: "2024",
+        },
+        member015: {
+          name: "Tên Thành Viên 15",
+          username: "Pioneer_15",
+          wallet: "pi1xyz0015",
+          zaloPersonal: "https://zalo.me/placeholder15",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder15.jpg",
+          joined: "2023",
+        },
+        member016: {
+          name: "Tên Thành Viên 16",
+          username: "Pioneer_16",
+          wallet: "pi1xyz0016",
+          zaloPersonal: "https://zalo.me/placeholder16",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder16.jpg",
+          joined: "2024",
+        },
+        member017: {
+          name: "Tên Thành Viên 17",
+          username: "Pioneer_17",
+          wallet: "pi1xyz0017",
+          zaloPersonal: "https://zalo.me/placeholder17",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder17.jpg",
+          joined: "2023",
+        },
+        member018: {
+          name: "Tên Thành Viên 18",
+          username: "Pioneer_18",
+          wallet: "pi1xyz0018",
+          zaloPersonal: "https://zalo.me/placeholder18",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder18.jpg",
+          joined: "2024",
+        },
+        member019: {
+          name: "Tên Thành Viên 19",
+          username: "Pioneer_19",
+          wallet: "pi1xyz0019",
+          zaloPersonal: "https://zalo.me/placeholder19",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder19.jpg",
+          joined: "2023",
+        },
+        member020: {
+          name: "Tên Thành Viên 20",
+          username: "Pioneer_20",
+          wallet: "pi1xyz0020",
+          zaloPersonal: "https://zalo.me/placeholder20",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder20.jpg",
+          joined: "2024",
+        },
+        member021: {
+          name: "Tên Thành Viên 21",
+          username: "Pioneer_21",
+          wallet: "pi1xyz0021",
+          zaloPersonal: "https://zalo.me/placeholder21",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder21.jpg",
+          joined: "2023",
+        },
+        member022: {
+          name: "Tên Thành Viên 22",
+          username: "Pioneer_22",
+          wallet: "pi1xyz0022",
+          zaloPersonal: "https://zalo.me/placeholder22",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder22.jpg",
+          joined: "2024",
+        },
+        member023: {
+          name: "Tên Thành Viên 23",
+          username: "Pioneer_23",
+          wallet: "pi1xyz0023",
+          zaloPersonal: "https://zalo.me/placeholder23",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder23.jpg",
+          joined: "2023",
+        },
+        member024: {
+          name: "Tên Thành Viên 24",
+          username: "Pioneer_24",
+          wallet: "pi1xyz0024",
+          zaloPersonal: "https://zalo.me/placeholder24",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder24.jpg",
+          joined: "2024",
+        },
+        member025: {
+          name: "Tên Thành Viên 25",
+          username: "Pioneer_25",
+          wallet: "pi1xyz0025",
+          zaloPersonal: "https://zalo.me/placeholder25",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder25.jpg",
+          joined: "2023",
+        },
+        member026: {
+          name: "Tên Thành Viên 26",
+          username: "Pioneer_26",
+          wallet: "pi1xyz0026",
+          zaloPersonal: "https://zalo.me/placeholder26",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder26.jpg",
+          joined: "2024",
+        },
+        member027: {
+          name: "Tên Thành Viên 27",
+          username: "Pioneer_27",
+          wallet: "pi1xyz0027",
+          zaloPersonal: "https://zalo.me/placeholder27",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder27.jpg",
+          joined: "2023",
+        },
+        member028: {
+          name: "Tên Thành Viên 28",
+          username: "Pioneer_28",
+          wallet: "pi1xyz0028",
+          zaloPersonal: "https://zalo.me/placeholder28",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder28.jpg",
+          joined: "2024",
+        },
+        member029: {
+          name: "Tên Thành Viên 29",
+          username: "Pioneer_29",
+          wallet: "pi1xyz0029",
+          zaloPersonal: "https://zalo.me/placeholder29",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder29.jpg",
+          joined: "2023",
+        },
+        member030: {
+          name: "Tên Thành Viên 30",
+          username: "Pioneer_30",
+          wallet: "pi1xyz0030",
+          zaloPersonal: "https://zalo.me/placeholder30",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder30.jpg",
+          joined: "2024",
+        },
+        member031: {
+          name: "Tên Thành Viên 31",
+          username: "Pioneer_31",
+          wallet: "pi1xyz0031",
+          zaloPersonal: "https://zalo.me/placeholder31",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder31.jpg",
+          joined: "2023",
+        },
+        member032: {
+          name: "Tên Thành Viên 32",
+          username: "Pioneer_32",
+          wallet: "pi1xyz0032",
+          zaloPersonal: "https://zalo.me/placeholder32",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder32.jpg",
+          joined: "2024",
+        },
+        member033: {
+          name: "Tên Thành Viên 33",
+          username: "Pioneer_33",
+          wallet: "pi1xyz0033",
+          zaloPersonal: "https://zalo.me/placeholder33",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder33.jpg",
+          joined: "2023",
+        },
+        member034: {
+          name: "Tên Thành Viên 34",
+          username: "Pioneer_34",
+          wallet: "pi1xyz0034",
+          zaloPersonal: "https://zalo.me/placeholder34",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder34.jpg",
+          joined: "2024",
+        },
+        member035: {
+          name: "Tên Thành Viên 35",
+          username: "Pioneer_35",
+          wallet: "pi1xyz0035",
+          zaloPersonal: "https://zalo.me/placeholder35",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder35.jpg",
+          joined: "2023",
+        },
+        member036: {
+          name: "Tên Thành Viên 36",
+          username: "Pioneer_36",
+          wallet: "pi1xyz0036",
+          zaloPersonal: "https://zalo.me/placeholder36",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder36.jpg",
+          joined: "2024",
+        },
+        member037: {
+          name: "Tên Thành Viên 37",
+          username: "Pioneer_37",
+          wallet: "pi1xyz0037",
+          zaloPersonal: "https://zalo.me/placeholder37",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder37.jpg",
+          joined: "2023",
+        },
+        member038: {
+          name: "Tên Thành Viên 38",
+          username: "Pioneer_38",
+          wallet: "pi1xyz0038",
+          zaloPersonal: "https://zalo.me/placeholder38",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder38.jpg",
+          joined: "2024",
+        },
+        member039: {
+          name: "Tên Thành Viên 39",
+          username: "Pioneer_39",
+          wallet: "pi1xyz0039",
+          zaloPersonal: "https://zalo.me/placeholder39",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder39.jpg",
+          joined: "2023",
+        },
+        member040: {
+          name: "Tên Thành Viên 40",
+          username: "Pioneer_40",
+          wallet: "pi1xyz0040",
+          zaloPersonal: "https://zalo.me/placeholder40",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder40.jpg",
+          joined: "2024",
+        },
+        member041: {
+          name: "Tên Thành Viên 41",
+          username: "Pioneer_41",
+          wallet: "pi1xyz0041",
+          zaloPersonal: "https://zalo.me/placeholder41",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder41.jpg",
+          joined: "2023",
+        },
+        member042: {
+          name: "Tên Thành Viên 42",
+          username: "Pioneer_42",
+          wallet: "pi1xyz0042",
+          zaloPersonal: "https://zalo.me/placeholder42",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder42.jpg",
+          joined: "2024",
+        },
+        member043: {
+          name: "Tên Thành Viên 43",
+          username: "Pioneer_43",
+          wallet: "pi1xyz0043",
+          zaloPersonal: "https://zalo.me/placeholder43",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder43.jpg",
+          joined: "2023",
+        },
+        member044: {
+          name: "Tên Thành Viên 44",
+          username: "Pioneer_44",
+          wallet: "pi1xyz0044",
+          zaloPersonal: "https://zalo.me/placeholder44",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder44.jpg",
+          joined: "2024",
+        },
+        member045: {
+          name: "Tên Thành Viên 45",
+          username: "Pioneer_45",
+          wallet: "pi1xyz0045",
+          zaloPersonal: "https://zalo.me/placeholder45",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder45.jpg",
+          joined: "2023",
+        },
+        member046: {
+          name: "Tên Thành Viên 46",
+          username: "Pioneer_46",
+          wallet: "pi1xyz0046",
+          zaloPersonal: "https://zalo.me/placeholder46",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder46.jpg",
+          joined: "2024",
+        },
+        member047: {
+          name: "Tên Thành Viên 47",
+          username: "Pioneer_47",
+          wallet: "pi1xyz0047",
+          zaloPersonal: "https://zalo.me/placeholder47",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder47.jpg",
+          joined: "2023",
+        },
+        member048: {
+          name: "Tên Thành Viên 48",
+          username: "Pioneer_48",
+          wallet: "pi1xyz0048",
+          zaloPersonal: "https://zalo.me/placeholder48",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder48.jpg",
+          joined: "2024",
+        },
+        member049: {
+          name: "Tên Thành Viên 49",
+          username: "Pioneer_49",
+          wallet: "pi1xyz0049",
+          zaloPersonal: "https://zalo.me/placeholder49",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder49.jpg",
+          joined: "2023",
+        },
+        member050: {
+          name: "Tên Thành Viên 50",
+          username: "Pioneer_50",
+          wallet: "pi1xyz0050",
+          zaloPersonal: "https://zalo.me/placeholder50",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder50.jpg",
+          joined: "2024",
+        },
+        member051: {
+          name: "Tên Thành Viên 51",
+          username: "Pioneer_51",
+          wallet: "pi1xyz0051",
+          zaloPersonal: "https://zalo.me/placeholder51",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder51.jpg",
+          joined: "2023",
+        },
+        member052: {
+          name: "Tên Thành Viên 52",
+          username: "Pioneer_52",
+          wallet: "pi1xyz0052",
+          zaloPersonal: "https://zalo.me/placeholder52",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder52.jpg",
+          joined: "2024",
+        },
+        member053: {
+          name: "Tên Thành Viên 53",
+          username: "Pioneer_53",
+          wallet: "pi1xyz0053",
+          zaloPersonal: "https://zalo.me/placeholder53",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder53.jpg",
+          joined: "2023",
+        },
+        member054: {
+          name: "Tên Thành Viên 54",
+          username: "Pioneer_54",
+          wallet: "pi1xyz0054",
+          zaloPersonal: "https://zalo.me/placeholder54",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder54.jpg",
+          joined: "2024",
+        },
+        member055: {
+          name: "Tên Thành Viên 55",
+          username: "Pioneer_55",
+          wallet: "pi1xyz0055",
+          zaloPersonal: "https://zalo.me/placeholder55",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder55.jpg",
+          joined: "2023",
+        },
+        member056: {
+          name: "Tên Thành Viên 56",
+          username: "Pioneer_56",
+          wallet: "pi1xyz0056",
+          zaloPersonal: "https://zalo.me/placeholder56",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder56.jpg",
+          joined: "2024",
+        },
+        member057: {
+          name: "Tên Thành Viên 57",
+          username: "Pioneer_57",
+          wallet: "pi1xyz0057",
+          zaloPersonal: "https://zalo.me/placeholder57",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder57.jpg",
+          joined: "2023",
+        },
+        member058: {
+          name: "Tên Thành Viên 58",
+          username: "Pioneer_58",
+          wallet: "pi1xyz0058",
+          zaloPersonal: "https://zalo.me/placeholder58",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder58.jpg",
+          joined: "2024",
+        },
+        member059: {
+          name: "Tên Thành Viên 59",
+          username: "Pioneer_59",
+          wallet: "pi1xyz0059",
+          zaloPersonal: "https://zalo.me/placeholder59",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder59.jpg",
+          joined: "2023",
+        },
+        member060: {
+          name: "Tên Thành Viên 60",
+          username: "Pioneer_60",
+          wallet: "pi1xyz0060",
+          zaloPersonal: "https://zalo.me/placeholder60",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder60.jpg",
+          joined: "2024",
+        },
+        member061: {
+          name: "Tên Thành Viên 61",
+          username: "Pioneer_61",
+          wallet: "pi1xyz0061",
+          zaloPersonal: "https://zalo.me/placeholder61",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder61.jpg",
+          joined: "2023",
+        },
+        member062: {
+          name: "Tên Thành Viên 62",
+          username: "Pioneer_62",
+          wallet: "pi1xyz0062",
+          zaloPersonal: "https://zalo.me/placeholder62",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder62.jpg",
+          joined: "2024",
+        },
+        member063: {
+          name: "Tên Thành Viên 63",
+          username: "Pioneer_63",
+          wallet: "pi1xyz0063",
+          zaloPersonal: "https://zalo.me/placeholder63",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder63.jpg",
+          joined: "2023",
+        },
+        member064: {
+          name: "Tên Thành Viên 64",
+          username: "Pioneer_64",
+          wallet: "pi1xyz0064",
+          zaloPersonal: "https://zalo.me/placeholder64",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder64.jpg",
+          joined: "2024",
+        },
+        member065: {
+          name: "Tên Thành Viên 65",
+          username: "Pioneer_65",
+          wallet: "pi1xyz0065",
+          zaloPersonal: "https://zalo.me/placeholder65",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder65.jpg",
+          joined: "2023",
+        },
+        member066: {
+          name: "Tên Thành Viên 66",
+          username: "Pioneer_66",
+          wallet: "pi1xyz0066",
+          zaloPersonal: "https://zalo.me/placeholder66",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder66.jpg",
+          joined: "2024",
+        },
+        member067: {
+          name: "Tên Thành Viên 67",
+          username: "Pioneer_67",
+          wallet: "pi1xyz0067",
+          zaloPersonal: "https://zalo.me/placeholder67",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder67.jpg",
+          joined: "2023",
+        },
+        member068: {
+          name: "Tên Thành Viên 68",
+          username: "Pioneer_68",
+          wallet: "pi1xyz0068",
+          zaloPersonal: "https://zalo.me/placeholder68",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder68.jpg",
+          joined: "2024",
+        },
+        member069: {
+          name: "Tên Thành Viên 69",
+          username: "Pioneer_69",
+          wallet: "pi1xyz0069",
+          zaloPersonal: "https://zalo.me/placeholder69",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder69.jpg",
+          joined: "2023",
+        },
+        member070: {
+          name: "Tên Thành Viên 70",
+          username: "Pioneer_70",
+          wallet: "pi1xyz0070",
+          zaloPersonal: "https://zalo.me/placeholder70",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder70.jpg",
+          joined: "2024",
+        },
+        member071: {
+          name: "Tên Thành Viên 71",
+          username: "Pioneer_71",
+          wallet: "pi1xyz0071",
+          zaloPersonal: "https://zalo.me/placeholder71",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder71.jpg",
+          joined: "2023",
+        },
+        member072: {
+          name: "Tên Thành Viên 72",
+          username: "Pioneer_72",
+          wallet: "pi1xyz0072",
+          zaloPersonal: "https://zalo.me/placeholder72",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder72.jpg",
+          joined: "2024",
+        },
+        member073: {
+          name: "Tên Thành Viên 73",
+          username: "Pioneer_73",
+          wallet: "pi1xyz0073",
+          zaloPersonal: "https://zalo.me/placeholder73",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder73.jpg",
+          joined: "2023",
+        },
+        member074: {
+          name: "Tên Thành Viên 74",
+          username: "Pioneer_74",
+          wallet: "pi1xyz0074",
+          zaloPersonal: "https://zalo.me/placeholder74",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder74.jpg",
+          joined: "2024",
+        },
+        member075: {
+          name: "Tên Thành Viên 75",
+          username: "Pioneer_75",
+          wallet: "pi1xyz0075",
+          zaloPersonal: "https://zalo.me/placeholder75",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder75.jpg",
+          joined: "2023",
+        },
+        member076: {
+          name: "Tên Thành Viên 76",
+          username: "Pioneer_76",
+          wallet: "pi1xyz0076",
+          zaloPersonal: "https://zalo.me/placeholder76",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder76.jpg",
+          joined: "2024",
+        },
+        member077: {
+          name: "Tên Thành Viên 77",
+          username: "Pioneer_77",
+          wallet: "pi1xyz0077",
+          zaloPersonal: "https://zalo.me/placeholder77",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder77.jpg",
+          joined: "2023",
+        },
+        member078: {
+          name: "Tên Thành Viên 78",
+          username: "Pioneer_78",
+          wallet: "pi1xyz0078",
+          zaloPersonal: "https://zalo.me/placeholder78",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder78.jpg",
+          joined: "2024",
+        },
+        member079: {
+          name: "Tên Thành Viên 79",
+          username: "Pioneer_79",
+          wallet: "pi1xyz0079",
+          zaloPersonal: "https://zalo.me/placeholder79",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder79.jpg",
+          joined: "2023",
+        },
+        member080: {
+          name: "Tên Thành Viên 80",
+          username: "Pioneer_80",
+          wallet: "pi1xyz0080",
+          zaloPersonal: "https://zalo.me/placeholder80",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder80.jpg",
+          joined: "2024",
+        },
+        member081: {
+          name: "Tên Thành Viên 81",
+          username: "Pioneer_81",
+          wallet: "pi1xyz0081",
+          zaloPersonal: "https://zalo.me/placeholder81",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder81.jpg",
+          joined: "2023",
+        },
+        member082: {
+          name: "Tên Thành Viên 82",
+          username: "Pioneer_82",
+          wallet: "pi1xyz0082",
+          zaloPersonal: "https://zalo.me/placeholder82",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder82.jpg",
+          joined: "2024",
+        },
+        member083: {
+          name: "Tên Thành Viên 83",
+          username: "Pioneer_83",
+          wallet: "pi1xyz0083",
+          zaloPersonal: "https://zalo.me/placeholder83",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder83.jpg",
+          joined: "2023",
+        },
+        member084: {
+          name: "Tên Thành Viên 84",
+          username: "Pioneer_84",
+          wallet: "pi1xyz0084",
+          zaloPersonal: "https://zalo.me/placeholder84",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder84.jpg",
+          joined: "2024",
+        },
+        member085: {
+          name: "Tên Thành Viên 85",
+          username: "Pioneer_85",
+          wallet: "pi1xyz0085",
+          zaloPersonal: "https://zalo.me/placeholder85",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder85.jpg",
+          joined: "2023",
+        },
+        member086: {
+          name: "Tên Thành Viên 86",
+          username: "Pioneer_86",
+          wallet: "pi1xyz0086",
+          zaloPersonal: "https://zalo.me/placeholder86",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder86.jpg",
+          joined: "2024",
+        },
+        member087: {
+          name: "Tên Thành Viên 87",
+          username: "Pioneer_87",
+          wallet: "pi1xyz0087",
+          zaloPersonal: "https://zalo.me/placeholder87",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder87.jpg",
+          joined: "2023",
+        },
+        member088: {
+          name: "Tên Thành Viên 88",
+          username: "Pioneer_88",
+          wallet: "pi1xyz0088",
+          zaloPersonal: "https://zalo.me/placeholder88",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder88.jpg",
+          joined: "2024",
+        },
+        member089: {
+          name: "Tên Thành Viên 89",
+          username: "Pioneer_89",
+          wallet: "pi1xyz0089",
+          zaloPersonal: "https://zalo.me/placeholder89",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder89.jpg",
+          joined: "2023",
+        },
+        member090: {
+          name: "Tên Thành Viên 90",
+          username: "Pioneer_90",
+          wallet: "pi1xyz0090",
+          zaloPersonal: "https://zalo.me/placeholder90",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder90.jpg",
+          joined: "2024",
+        },
+        member091: {
+          name: "Tên Thành Viên 91",
+          username: "Pioneer_91",
+          wallet: "pi1xyz0091",
+          zaloPersonal: "https://zalo.me/placeholder91",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder91.jpg",
+          joined: "2023",
+        },
+        member092: {
+          name: "Tên Thành Viên 92",
+          username: "Pioneer_92",
+          wallet: "pi1xyz0092",
+          zaloPersonal: "https://zalo.me/placeholder92",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder92.jpg",
+          joined: "2024",
+        },
+        member093: {
+          name: "Tên Thành Viên 93",
+          username: "Pioneer_93",
+          wallet: "pi1xyz0093",
+          zaloPersonal: "https://zalo.me/placeholder93",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder93.jpg",
+          joined: "2023",
+        },
+        member094: {
+          name: "Tên Thành Viên 94",
+          username: "Pioneer_94",
+          wallet: "pi1xyz0094",
+          zaloPersonal: "https://zalo.me/placeholder94",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder94.jpg",
+          joined: "2024",
+        },
+        member095: {
+          name: "Tên Thành Viên 95",
+          username: "Pioneer_95",
+          wallet: "pi1xyz0095",
+          zaloPersonal: "https://zalo.me/placeholder95",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder95.jpg",
+          joined: "2023",
+        },
+        member096: {
+          name: "Tên Thành Viên 96",
+          username: "Pioneer_96",
+          wallet: "pi1xyz0096",
+          zaloPersonal: "https://zalo.me/placeholder96",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder96.jpg",
+          joined: "2024",
+        },
+        member097: {
+          name: "Tên Thành Viên 97",
+          username: "Pioneer_97",
+          wallet: "pi1xyz0097",
+          zaloPersonal: "https://zalo.me/placeholder97",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder97.jpg",
+          joined: "2023",
+        },
+        member098: {
+          name: "Tên Thành Viên 98",
+          username: "Pioneer_98",
+          wallet: "pi1xyz0098",
+          zaloPersonal: "https://zalo.me/placeholder98",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder98.jpg",
+          joined: "2024",
+        },
+        member099: {
+          name: "Tên Thành Viên 99",
+          username: "Pioneer_99",
+          wallet: "pi1xyz0099",
+          zaloPersonal: "https://zalo.me/placeholder99",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder99.jpg",
+          joined: "2023",
+        },
+        member100: {
+          name: "Tên Thành Viên 100",
+          username: "Pioneer_100",
+          wallet: "pi1xyz0100",
+          zaloPersonal: "https://zalo.me/placeholder100",
+          zaloGroup: "https://zalo.me/g/supportgroup",
+          telegram: "https://t.me/pinews",
+          avatar: "https://i.imgur.com/placeholder100.jpg",
+          joined: "2024",
         },
       };
 
@@ -871,27 +1781,34 @@
         joined: "N/A",
       };
 
-      document.getElementById("name").innerHTML = member.name
-        .split("")
-        .map(
-          (char, i) =>
-            `<span style="animation-delay: ${i * 0.1}s">${char}</span>`
-        )
-        .join("");
+      const nameElement = document.getElementById("name");
+      if (member.name && member.name.trim() !== "") {
+        nameElement.innerHTML = member.name
+          .split("")
+          .map(
+            (char, i) =>
+              `<span style="animation-delay: ${i * 0.1}s">${char}</span>`
+          )
+          .join("");
+      } else {
+        nameElement.textContent = "Tên không khả dụng";
+        console.error("Lỗi: Không tìm thấy tên cho memberId:", memberId);
+      }
+
+      console.log("Avatar URL:", member.avatar);
       document.getElementById(
         "username"
       ).textContent = `Username: ${member.username}`;
       document.getElementById(
         "wallet"
       ).textContent = `Wallet: ${member.wallet}`;
-      document.getElementById("zalo-personal-cta").href = member.zaloPersonal;
       document.getElementById("zalo-personal").href = member.zaloPersonal;
       document.getElementById("zalo-group").href = member.zaloGroup;
       document.getElementById("telegram").href = member.telegram;
       document.getElementById("avatar").src = member.avatar;
       document.querySelector(
         ".description"
-      ).textContent = `Chào Đón PI Tiến Lên ${member.joined}`;
+      ).textContent = `PI LÀ TIỀN ĐIỆN TỬ PHỔ BIẾN NHẤT TOÀN CẦU ${member.joined}`;
 
       function copyWallet() {
         navigator.clipboard.writeText(member.wallet);
